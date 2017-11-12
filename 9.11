@@ -1,0 +1,37 @@
+class ItemToPurchase():
+    def __init__(self, name="none", price=0, quantity=0):
+        self.name = str(name)
+        self.price = float(price)
+        self.quantity = int(quantity)
+
+    def __add__(self, other):
+        value = (self.price * self.quantity)+ (other.price * other.quantity)
+        return value
+
+    def print_item_cost(self):
+        total = self.price * self.quantity
+        print("%s %s @ $%.2f = $%.2f" % (self.name, self.quantity, self.price, total))
+
+
+def run():
+    print("Item 1")
+    name = input("Enter the item name:\n")
+    price = input("Enter the item price:\n")
+    quantity = input("Enter the item quantity:\n")
+    Item1 = ItemToPurchase(name, price, quantity)
+
+    print("Item 2")
+    name = input("Enter the item name:\n")
+    price = input("Enter the item price:\n")
+    quantity = input("Enter the item quantity:\n")
+    Item2 = ItemToPurchase(name, price, quantity)
+
+    total_cost = Item1 + Item2
+
+    print("TOTAL COST")
+    Item1.print_item_cost()
+    Item2.print_item_cost()
+    print("\nTotal: $%s" % total_cost)
+
+
+run()
