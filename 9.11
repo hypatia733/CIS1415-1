@@ -12,6 +12,11 @@ class ItemToPurchase():
         total = self.price * self.quantity
         print("%s %s @ $%.2f = $%.2f" % (self.name, self.quantity, self.price, total))
 
+class ShoppingCart:
+    cart_items = []                                            #I'm not actually sure if this is where the cart list should be
+    def __init__(self, name="none", date="January 1, 2016")
+        self.customer_name = str(name)
+        self.date = str(date)
 
 def run():
     print("Item 1")
@@ -35,3 +40,4 @@ def run():
 
 
 run()
+    
